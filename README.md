@@ -20,6 +20,7 @@ Run `npm run generate:md` to generate a table of contents
 
 [![npm][npm-badge]][npm-link]
 [![Try @form8ion/github-core on RunKit][runkit-badge]][runkit-link]
+[![license][license-badge]][license-link]
 
 <!--consumer-badges end -->
 
@@ -95,3 +96,7 @@ $ npm test
 [runkit-link]: https://npm.runkit.com/@form8ion/github-core
 
 [runkit-badge]: https://badge.runkitcdn.com/@form8ion/github-core.svg
+
+[license-link]: LICENSE
+
+[license-badge]: https://img.shields.io/github/license/form8ion/github-core.svg?logo=opensourceinitiative
