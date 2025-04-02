@@ -1,0 +1,6 @@
+_extends: .github
+repository:
+  name: github-core
+  description: core package to support form8ion plugins that interact with GitHub
+  private: false
+  homepage: https://npm.im/@form8ion/github-core
