@@ -65,6 +65,9 @@
     "vitest-when": "0.6.0"
   },
   "dependencies": {
-    "@form8ion/core": "^4.8.0"
+    "@form8ion/core": "^4.8.0",
+    "@octokit/rest": "^21.1.1",
+    "@travi/cli-messages": "^1.1.1",
+    "octokit-auth-netrc": "^3.1.2"
   }
 }

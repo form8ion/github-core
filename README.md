@@ -38,9 +38,11 @@ $ npm install @form8ion/github-core
 ### Example
 
 ```javascript
-import {sourceHostedOnGitHub} from '@form8ion/github-core';
+import {sourceHostedOnGitHub, octokit} from '@form8ion/github-core';
 
 await sourceHostedOnGitHub({projectRoot: process.cwd()});
+
+octokit.getNetrcAuthenticatedInstance();
 ```
 
 ## Contributing
