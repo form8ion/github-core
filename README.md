@@ -12,7 +12,12 @@ core package to support form8ion plugins that interact with GitHub
 
 ## Table of Contents
 
-Run `npm run generate:md` to generate a table of contents
+* [Usage](#usage)
+  * [Installation](#installation)
+  * [Example](#example)
+* [Contributing](#contributing)
+  * [Dependencies](#dependencies)
+  * [Verification](#verification)
 
 ## Usage
 
@@ -32,7 +37,11 @@ $ npm install @form8ion/github-core
 
 ### Example
 
-run `npm run generate:md` to inject the usage example
+```javascript
+import {sourceHostedOnGitHub} from '@form8ion/github-core';
+
+await sourceHostedOnGitHub({projectRoot: process.cwd()});
+```
 
 ## Contributing
 
