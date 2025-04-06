@@ -46,6 +46,12 @@
     "provenance": true
   },
   "packageManager": "npm@11.2.0+sha512.3dc9c50ba813a3d54393155a435fe66404b72685ab0e3008f9ae9ed8d81f6104860f07ed2656dd5748c1322d95f3140fa9b19c59a6bba7750fd12285f81866da",
+  "dependencies": {
+    "@form8ion/core": "^4.8.0",
+    "@octokit/rest": "^21.1.1",
+    "@travi/cli-messages": "^1.1.1",
+    "octokit-auth-netrc": "^3.1.2"
+  },
   "devDependencies": {
     "@form8ion/commitlint-config": "1.0.76",
     "@form8ion/eslint-config": "7.0.9",
@@ -68,11 +74,5 @@
     "rollup-plugin-auto-external": "2.0.0",
     "vitest": "2.0.3",
     "vitest-when": "0.6.0"
-  },
-  "dependencies": {
-    "@form8ion/core": "^4.8.0",
-    "@octokit/rest": "^21.1.1",
-    "@travi/cli-messages": "^1.1.1",
-    "octokit-auth-netrc": "^3.1.2"
   }
 }
