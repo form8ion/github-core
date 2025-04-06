@@ -26,6 +26,7 @@ core package to support form8ion plugins that interact with GitHub
 [![npm][npm-badge]][npm-link]
 [![Try @form8ion/github-core on RunKit][runkit-badge]][runkit-link]
 [![license][license-badge]][license-link]
+![node][node-badge]
 
 <!--consumer-badges end -->
 
@@ -111,3 +112,5 @@ $ npm test
 [license-link]: LICENSE
 
 [license-badge]: https://img.shields.io/github/license/form8ion/github-core.svg?logo=opensourceinitiative
+
+[node-badge]: https://img.shields.io/node/v/@form8ion/github-core?logo=node.js
