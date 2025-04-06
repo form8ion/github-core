@@ -3,3 +3,6 @@ root: true
 extends:
   - '@form8ion'
   - '@form8ion/vitest'
+
+parserOptions:
+  ecmaVersion: 2022

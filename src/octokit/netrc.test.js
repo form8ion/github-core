@@ -1,0 +1,43 @@
+// eslint-disable-next-line import/no-unresolved
+import * as octokit from '@octokit/rest';
+import {createNetrcAuth} from 'octokit-auth-netrc';
+
+import {afterEach, describe, expect, it, vi} from 'vitest';
+import any from '@travi/any';
+import {when} from 'vitest-when';
+
+import getNetrcAuthenticatedInstance from './netrc.js';
+
+vi.mock('@octokit/rest');
+
+describe('github client netrc', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('should authenticate the client using the token from netrc', () => {
+    const instance = any.simpleObject();
+    when(octokit.Octokit).calledWith({authStrategy: createNetrcAuth}).thenReturn(instance);
+
+    expect(getNetrcAuthenticatedInstance()).toBe(instance);
+  });
+
+  it('should not return a client if no token is available in the netrc', () => {
+    const error = new Error('from test');
+    error.code = 'ENONETRCTOKEN';
+    octokit.Octokit.mockImplementation(() => {
+      throw error;
+    });
+
+    expect(getNetrcAuthenticatedInstance()).toBeUndefined();
+  });
+
+  it('should rethrow an error that is unrelated to a missing netrc token', () => {
+    const error = new Error('from test');
+    octokit.Octokit.mockImplementation(() => {
+      throw error;
+    });
+
+    expect(() => getNetrcAuthenticatedInstance()).toThrowError(error);
+  });
+});

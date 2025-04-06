@@ -12,7 +12,12 @@ core package to support form8ion plugins that interact with GitHub
 
 ## Table of Contents
 
-Run `npm run generate:md` to generate a table of contents
+* [Usage](#usage)
+  * [Installation](#installation)
+  * [Example](#example)
+* [Contributing](#contributing)
+  * [Dependencies](#dependencies)
+  * [Verification](#verification)
 
 ## Usage
 
@@ -21,6 +26,7 @@ Run `npm run generate:md` to generate a table of contents
 [![npm][npm-badge]][npm-link]
 [![Try @form8ion/github-core on RunKit][runkit-badge]][runkit-link]
 [![license][license-badge]][license-link]
+![node][node-badge]
 
 <!--consumer-badges end -->
 
@@ -32,7 +38,13 @@ $ npm install @form8ion/github-core
 
 ### Example
 
-run `npm run generate:md` to inject the usage example
+```javascript
+import {sourceHostedOnGitHub, octokit} from '@form8ion/github-core';
+
+await sourceHostedOnGitHub({projectRoot: process.cwd()});
+
+octokit.getNetrcAuthenticatedInstance();
+```
 
 ## Contributing
 
@@ -100,3 +112,5 @@ $ npm test
 [license-link]: LICENSE
 
 [license-badge]: https://img.shields.io/github/license/form8ion/github-core.svg?logo=opensourceinitiative
+
+[node-badge]: https://img.shields.io/node/v/@form8ion/github-core?logo=node.js

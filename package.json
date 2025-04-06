@@ -4,6 +4,9 @@
   "license": "MIT",
   "version": "0.0.0-semantically-released",
   "type": "module",
+  "engines": {
+    "node": "^20.18.0 || >=22.11.0"
+  },
   "author": "Matt Travi <npm@travi.org> (https://matt.travi.org)",
   "repository": "form8ion/github-core",
   "bugs": "https://github.com/form8ion/github-core/issues",
@@ -31,7 +34,8 @@
     "lint:js:fix": "run-s 'lint:js -- --fix'",
     "lint:publish": "publint --strict",
     "test": "npm-run-all --print-label --parallel lint:* --parallel test:*",
-    "pretest": "run-s build"
+    "pretest": "run-s build",
+    "lint:engines": "ls-engines"
   },
   "files": [
     "example.js",
@@ -42,6 +46,12 @@
     "provenance": true
   },
   "packageManager": "npm@11.2.0+sha512.3dc9c50ba813a3d54393155a435fe66404b72685ab0e3008f9ae9ed8d81f6104860f07ed2656dd5748c1322d95f3140fa9b19c59a6bba7750fd12285f81866da",
+  "dependencies": {
+    "@form8ion/core": "^4.8.0",
+    "@octokit/rest": "^21.1.1",
+    "@travi/cli-messages": "^1.1.1",
+    "octokit-auth-netrc": "^3.1.2"
+  },
   "devDependencies": {
     "@form8ion/commitlint-config": "1.0.76",
     "@form8ion/eslint-config": "7.0.9",
@@ -53,6 +63,7 @@
     "cz-conventional-changelog": "3.3.0",
     "husky": "9.1.1",
     "lockfile-lint": "4.14.0",
+    "ls-engines": "0.9.3",
     "npm-run-all2": "6.2.2",
     "publint": "0.2.9",
     "remark-cli": "12.0.1",
