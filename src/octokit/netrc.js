@@ -3,11 +3,11 @@ import {Octokit} from '@octokit/rest';
 import {createNetrcAuth} from 'octokit-auth-netrc';
 import {info, warn} from '@travi/cli-messages';
 
-export default function getNetrcAuthenticatedInstance() {
+export default function getNetrcAuthenticatedInstance({logger} = {}) {
   try {
     info('Getting GitHub Personal Access Token from ~/.netrc', {level: 'secondary'});
 
-    return new Octokit({authStrategy: createNetrcAuth});
+    return new Octokit({authStrategy: createNetrcAuth, ...logger && {log: logger}});
   } catch (e) {
     if ('ENONETRCTOKEN' !== e.code) throw e;
 

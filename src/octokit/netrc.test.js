@@ -2,7 +2,7 @@
 import * as octokit from '@octokit/rest';
 import {createNetrcAuth} from 'octokit-auth-netrc';
 
-import {afterEach, describe, expect, it, vi} from 'vitest';
+import {describe, expect, it, vi} from 'vitest';
 import any from '@travi/any';
 import {when} from 'vitest-when';
 
@@ -11,15 +11,19 @@ import getNetrcAuthenticatedInstance from './netrc.js';
 vi.mock('@octokit/rest');
 
 describe('github client netrc', () => {
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
+  const instance = any.simpleObject();
 
   it('should authenticate the client using the token from netrc', () => {
-    const instance = any.simpleObject();
     when(octokit.Octokit).calledWith({authStrategy: createNetrcAuth}).thenReturn(instance);
 
     expect(getNetrcAuthenticatedInstance()).toBe(instance);
+  });
+
+  it('should configure the octokit instance with a provided logger', () => {
+    const logger = any.simpleObject();
+    when(octokit.Octokit).calledWith({authStrategy: createNetrcAuth, log: logger}).thenReturn(instance);
+
+    expect(getNetrcAuthenticatedInstance({logger})).toBe(instance);
   });
 
   it('should not return a client if no token is available in the netrc', () => {

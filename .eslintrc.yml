@@ -6,3 +6,9 @@ extends:
 
 parserOptions:
   ecmaVersion: 2022
+
+overrides:
+  - files:
+      - 'example.js'
+    rules:
+      'no-console': off

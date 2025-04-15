@@ -43,7 +43,13 @@ import {sourceHostedOnGitHub, octokit} from '@form8ion/github-core';
 
 await sourceHostedOnGitHub({projectRoot: process.cwd()});
 
-octokit.getNetrcAuthenticatedInstance();
+octokit.getNetrcAuthenticatedInstance({
+  logger: {
+    info: message => console.error(message),
+    warn: message => console.error(message),
+    error: message => console.error(message)
+  }
+});
 ```
 
 ## Contributing
