@@ -29,18 +29,14 @@ describe('github client netrc', () => {
   it('should not return a client if no token is available in the netrc', () => {
     const error = new Error('from test');
     error.code = 'ENONETRCTOKEN';
-    octokit.Octokit.mockImplementation(() => {
-      throw error;
-    });
+    when(octokit.Octokit).calledWith({authStrategy: createNetrcAuth}).thenThrow(error);
 
     expect(getNetrcAuthenticatedInstance()).toBeUndefined();
   });
 
   it('should rethrow an error that is unrelated to a missing netrc token', () => {
     const error = new Error('from test');
-    octokit.Octokit.mockImplementation(() => {
-      throw error;
-    });
+    when(octokit.Octokit).calledWith({authStrategy: createNetrcAuth}).thenThrow(error);
 
     expect(() => getNetrcAuthenticatedInstance()).toThrowError(error);
   });
