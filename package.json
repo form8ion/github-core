@@ -50,7 +50,7 @@
     "@form8ion/core": "^4.8.0",
     "@octokit/rest": "^22.0.0",
     "@travi/cli-messages": "^1.1.1",
-    "octokit-auth-netrc": "^3.1.2"
+    "octokit-auth-netrc": "^4.0.0"
   },
   "devDependencies": {
     "@form8ion/commitlint-config": "2.0.11",
