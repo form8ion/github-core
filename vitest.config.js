@@ -4,6 +4,13 @@ export default defineConfig({
   test: {
     globals: true,
     restoreMocks: true,
-    mockReset: true
+    mockReset: true,
+
+    coverage: {
+      provider: 'v8',
+      reporter: ['lcov', 'text-summary', 'html'],
+      include: ['src/**'],
+      exclude: ['src/**/index.js']
+    }
   }
 });
