@@ -34,9 +34,6 @@
     "pregenerate:md": "run-s build",
     "generate:md": "remark . --output",
     "prepack": "run-s build",
-    "test:unit": "run-s 'test:unit:base -- --coverage'",
-    "test:unit:base": "NODE_ENV=test DEBUG=any vitest run src/",
-    "lint:lockfile": "lockfile-lint",
     "prepare": "husky",
     "watch": "run-s 'build:js -- --watch'"
   },
