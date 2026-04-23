@@ -61,7 +61,7 @@ jobs:
       id-token: write
       issues: write
       pull-requests: write
-    uses: form8ion/semantic-release-workflow/.github/workflows/release.yml@742c0cfd6404a14902a4ef0519a94e274c208b8a # v1.0.0
+    uses: form8ion/semantic-release-workflow/.github/workflows/release.yml@b740c6bc830408bc1666423fb9ca971fbe587345 # v1.0.1
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
   workflow-result:
