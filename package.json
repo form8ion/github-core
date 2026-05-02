@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@form8ion/commitlint-config": "2.0.12",
-    "@form8ion/eslint-config": "7.0.15",
+    "@form8ion/eslint-config": "7.0.16",
     "@form8ion/eslint-config-vitest": "1.1.0",
     "@form8ion/remark-lint-preset": "6.0.7",
     "@travi/any": "3.3.0",
