@@ -53,7 +53,7 @@
     "octokit-auth-netrc": "^4.0.0"
   },
   "devDependencies": {
-    "@form8ion/commitlint-config": "2.0.19",
+    "@form8ion/commitlint-config": "3.0.0",
     "@form8ion/eslint-config": "7.0.18",
     "@form8ion/eslint-config-vitest": "1.1.0",
     "@form8ion/remark-lint-preset": "6.0.7",
